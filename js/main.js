@@ -33,12 +33,32 @@ var redCurrant = {
 // END DO NOT CHANGE ZONE
 // ##########################################################
 
-
-var writeBerries = function () {
+var writeBerries = function (roundThings) {
   document.write('<h1>Berries</h1>');
 
-}
+  roundThings.forEach(function (roundThing) {
+    document.write(`<h2>${roundThing.name}</h2>`);
+    document.write('<dl>');
+    document.write('<dt>Grows on a shrub?</dt>');
 
+    document.write('<dd>');
+
+    if (roundThing.onShrub) {
+      document.write('Yes');
+    } else {
+      document.write('No');
+    }
+
+    document.write('</dd>');
+    document.write('<dt>Energy</dt>');
+    document.write(`<dd>${roundThing.energy} kJ</dd>`);
+    document.write('<dt>Carbohydrates</dt>');
+    document.write(`<dd>${roundThing.carbs} g</dd>`);
+    document.write('<dt>Protein</dt>');
+    document.write(`<dd>${roundThing.protein} g</dd>`);
+  });
+
+};
 
 // ##########################################################
 // START DO NOT CHANGE ZONE
